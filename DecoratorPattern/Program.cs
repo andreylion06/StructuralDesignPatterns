@@ -20,6 +20,3 @@ Console.WriteLine(hero.ToString());
 Console.WriteLine("\n\n\n");
 
 hero.Action();
-
-
-
