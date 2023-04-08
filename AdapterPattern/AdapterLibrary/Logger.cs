@@ -6,23 +6,23 @@ using System.Threading.Tasks;
 
 namespace AdapterPattern.AdapterLibrary
 {
-    public class Logger
+    public class Logger : ILogger
     {
-        public virtual void Log(string message)
+        public void Log(string message)
         {
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine(message);
             Console.ResetColor();
         }
 
-        public virtual void Error(string message)
+        public void Error(string message)
         {
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine(message);
             Console.ResetColor();
         }
 
-        public virtual void Warn(string message)
+        public void Warn(string message)
         {
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine(message);

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AdapterPattern.AdapterLibrary
 {
-    public class FileLoggerAdapter : Logger
+    public class FileLoggerAdapter : ILogger
     {
        private FileWriter _fileWriter;
 
@@ -15,17 +15,17 @@ namespace AdapterPattern.AdapterLibrary
             _fileWriter = fileWriter;
         }
 
-        public override void Log(string message)
+        public void Log(string message)
         {
             _fileWriter.WriteLine($"Log: {message}");
         }
 
-        public override void Error(string message)
+        public void Error(string message)
         {
             _fileWriter.WriteLine($"Error: {message}");
         }
 
-        public override void Warn(string message)
+        public void Warn(string message)
         {
             _fileWriter.WriteLine($"Warn: {message}");
         }
